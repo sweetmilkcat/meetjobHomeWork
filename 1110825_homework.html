@@ -1,0 +1,94 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>表單</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+
+		$(document).ready(function(){
+			//同帳單地址打勾 以下訊息隱藏
+			$("#hideShip").click(function(){
+
+				if($("#hideShip").is(":checked")){
+					$("#hideArea").hide();
+				}else{
+					$("#hideArea").show();
+				}
+			})
+
+			//信用卡勾選卡號&有效期限可輸入
+			$("#creditcard").click(function(){
+				$("#credit input").attr('disabled',false);
+			})
+
+			$("#transfer").click(function(){
+				$("#credit input").attr('disabled',true);
+			})
+		});
+				
+	</script>
+</head>
+<body>
+	<form id="form1" action="order.php" method="post">
+		<!--元素區塊，被包起來的視為同一個區塊，這個區塊會有邊框-->
+		<fieldset>
+			<legend>帳單資訊</legend> <!--圖例-->
+			<div>
+				<label for="name">姓名</label> <!--label:標籤，可用自己的名稱，用來讓表單來控制元件的說明標題
+				一般label裡面的 for 對應的是表單元件的id名稱;在寫label時可以將for省略-->
+				<input type="text" id="name" />
+			</div>
+			<div>
+				<label for="address">地址</label> <!--標籤自己的名稱-->
+				<input type="text" id="address" />
+			</div>
+
+			<div>
+				<span>付款方式</span>
+				<input type="radio" name="payment" value="creditcard" id="creditcard" checked />
+				<label for="creditcard">信用卡</label>
+				<input type="radio" name="payment" value="transfer" id="transfer" />
+				<label for="transfer">轉帳</label>
+			</div>
+
+			<div id="credit">
+				<div>
+					<label for="cardNumber">卡號:</label>
+					<input type="text" id="cardNumber" />
+					<!--
+						attr('disabled',true)表示不可以輸入
+						attr('disabled',false) 表示可以輸入
+					-->
+				</div>
+				<div>
+					<label for="expiration">有效期限:</label>
+					<input type="text" id="expiration" />
+				</div>
+			</div>
+
+		</fieldset>
+
+
+		<fieldset>
+			<legend>送貨地址</legend>
+			<div>
+				<input type="checkbox" id="hideShip" checked />
+				<label for="hideShip">同帳單地址</label>
+			</div>
+			<div id="hideArea">
+				<div>
+					<label for="shipName">姓名:</label>
+					<input type="text" id="shipName" />
+				</div>
+
+				<div>
+					<label for="shipAddress">地址:</label>
+					<input type="text" id="shipAddress" />
+				</div>
+			</div>
+		</fieldset>
+
+	</form>
+
+</body>
+</html>
