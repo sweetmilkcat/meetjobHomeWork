@@ -1,0 +1,154 @@
+body{
+	margin: 0 auto; 
+	height:100%;
+}
+a{
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+}
+h2{
+	margin-left: 2%; 
+}
+#wrapper{
+	min-height:100%; /*整個區塊高度為100%*/
+	margin-bottom:-100px; /*等一下footer的高度會是100px(留給footer空間；否則版面加上footer會往下排 就會形成版面不好看)*/
+}
+#banner{
+	height:70px;
+	width: 100%;
+}
+#menu{
+	height:50px;
+	width: 100%;
+	background-color:#FAE593;
+	color:#ffffff; /*區塊內的文字為白色*/
+}
+#content{
+	width: 100%;
+	min-height:300px;
+}
+
+#area1{
+	float: left;
+	background-color: #FACA80;
+	width: 70%;
+	height:100%;
+}
+
+#area1 h2{
+	color: #AB5B15;
+}
+
+#area2{
+	float: left;
+	width: 30%;
+	height:96%;
+	padding-top:2%; 
+}
+
+.report{
+	clear: both;
+	background-color: #F5F2CB;
+	width: 96%;
+	height: 46%;
+	margin:2%;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+}
+#article1{
+	border: 1px solid #F09E29;
+	border-radius: 15px;
+	width: 90%;
+	height: 75%;
+	margin: 1% 5%;
+	color:#F09525;	
+	font-weight: bold;
+	padding: 1%;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+
+#photo1{
+	width: 45%;
+	height: 80%;
+	margin: 2%;
+	float: left;
+}
+
+#photo1 img{
+	width: 100%;
+	height: 80%;
+	border-radius: 15px;
+	
+}
+#article2{
+	float: left;
+	width: 45%;
+	height: 70%;
+	margin: 1%;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+.photo2{
+	width: 90%;
+	height: 45%;
+	margin-left:2%;
+	margin-top: 2%;
+	text-align: center;
+}
+.photo2 img{
+	width: 98%;
+	height: 80%;
+	margin: 2%;
+}
+#footer{
+	clear: both;
+	width:100%;
+	height:100px;
+	background-color: #000000;
+	color:#ffffff;
+	text-align: center;
+}
+#footer span{
+	font-size: 20px;
+}
+#menu ul{
+	margin-left: 18%;
+	color:#FFFFFF;
+	line-height: 50px;/*亦可使用padding或margin來調整位置*/
+	font-size: 20px;
+}
+
+#menu li{
+	list-style: none;
+	float:left;
+	padding-right: 2em;
+	padding-left: 2em;
+}
+#logo{
+	float: left;
+}
+
+#logo img{
+	width: 100%;
+}
+
+#fb{
+	float: right;
+	margin-right: 1em;
+	margin-top:1em;
+}
+#fb img{
+	width: 50%;
+}
+
+#ig{
+	float: right;
+	margin-right: 1em;
+	margin-top:1em;
+}
+
+#ig img{
+	width: 50%;
+}
