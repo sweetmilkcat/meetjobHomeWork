@@ -1,0 +1,90 @@
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/homework_1110901.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#menulist li ul").hide();
+			$(".submenu").attr("z-index",9999);	
+			$("#menulist li").hover(
+				function(){
+					$(this).find("ul").slideDown("fast");
+					$(this).find("a:first").addClass("active");
+				},function(){
+					$(this).find(".submenu").fadeOut("fast");
+					$(this).find("a").removeClass("active");
+				}
+				);
+		});
+	</script>
+</head>
+<body>
+	<!--LOGO + 搜尋+小圖-->
+	<div id="header">
+	</div>
+
+	<!--Menu-->
+	<div id="menu">
+		
+	</div>
+
+	<!--圖片輪播區塊-->
+	<div id="hot">
+		<div id="carousel">
+			<ul class="carouselimg">
+				<li><img src="img/carousel1.jpg"></li>
+				<li><img src="img/carousel2.jpg"></li>
+				<li><img src="img/carousel3.jpg"></li>
+				<li><img src="img/carousel4.png"></li>
+			<ul>
+
+			<div class="btn left">&lt;</div>
+			<div class="btn right">&gt;</div>
+
+		</div>
+
+		<div id="hotimg">
+			<img src="img/photo2.jpg" style="margin-bottom: 23px;">
+			<img src="img/photo2.jpg" style="margin-bottom: 23px;">
+			<img src="img/photo2.jpg">
+		</div>
+	</div>
+
+	<!--新聞-->
+	<div>
+		
+	</div>
+
+	<!--熱門議題-->
+	<div></div>
+
+	<!--精彩節目-->
+	<div></div>
+
+	<!--更多精采節目-->
+	<div></div>
+
+
+	<!--優質戲劇-->
+	<div>
+
+		<div id="hotdrama">
+		</div>
+
+		<div id="dramalist">
+		</div>
+	</div>
+
+	<!--企業動態-->
+	<div>
+		
+	</div>
+
+	<!--footer-->
+	<div id="footer">
+	</div>
+</body>
+</html>
