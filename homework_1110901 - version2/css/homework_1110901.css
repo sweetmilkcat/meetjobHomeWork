@@ -1,0 +1,488 @@
+body{
+	margin: 0px;
+	background-color: #FCFCFA;
+}
+*{
+	list-style: none;
+	text-decoration: none;
+
+}
+h3{
+	font-weight: normal;
+}
+a{
+	color: #000000;
+}
+
+.time{
+	background: url(https://cc.tvbs.com.tw/portal_production/2022/images/Icon-clock.svg) center left no-repeat; /*外部嵌入圖片 no-repeat表示不重複*/
+	background-size: 14px 14px; /*設定背景圖片的大小*/
+	padding-left: 20px;
+	color:	#7B7B7B;
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 20px;
+
+}
+#header{
+	width: 100%;
+	height: 60px;
+}
+
+#header .logo{
+	float: left;
+	margin-left: 20px; 
+	margin-top: 10px;
+}
+.search{
+	float: right;
+	margin-right: 30px;
+	padding-top: 20px;
+	display: flex;
+}
+.search input{
+	width: 200px;
+	height: 35px;
+	border-radius: 10px;
+	border:1px solid #ccc;
+	font-size: 15px;
+	margin-right: 10px;
+}
+.search button{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-right: 10px;
+	padding: 0;
+}
+.search button img{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.search a{
+	text-decoration: none;
+	text-align: center;
+	width: 35px;
+	height: 35px;
+	background-color: #3C26FA;
+	border-radius: 50%;
+	color: #ffffff;
+	font-size: 18px;
+	line-height: 35px;
+}
+#menu{
+	background-color: #6682FB;
+	width: 100%;
+	height: 50px;
+
+}
+
+#menulist{
+	position:absolute;
+	margin-left: 13%;
+	z-index: 9999;
+	display: flex;
+}
+
+#menulist li{
+
+	visibility: visible;
+	white-space: nowrap;
+	margin-right: 40px;
+	margin-top: -5px;
+}
+#menulist a{
+	color: #ffffff;
+	text-decoration: none;
+	display: block;
+	font-size: 20px;
+
+}
+
+#menulist li ul{
+	position:absolute;
+	left:auto;
+	width:auto; /*自適應 (會隨內容自行調整寬度)*/
+	padding: 5px;
+	background-color: #6682FB;
+	border-radius: 5%;
+}
+#menulist li ul li{
+	margin: 5px;
+}
+.active{
+	background-color: #3675E3;
+
+}
+#main{
+	width: 100%;
+	min-height:1000px;
+	/*margin-bottom: -300px;*/
+}
+#hot{
+	width: 85%;
+	height: 500px;
+	background-color: #000000;
+	padding: 0px 0px 0px 15%;
+
+}
+
+#carousel{
+	float: left;
+	width: 900px;
+	height: 500px;
+	position: relative;
+	overflow:hidden;
+	padding: 0px;
+}
+#carousel .carouselimg{
+	width: 5000px;
+	position: absolute;
+	padding: 0px;
+    margin-top: 0px;
+}
+#carousel .carouselimg img{
+	width: 900px;
+	height: 500px;
+}
+#carousel .carouselimg li{
+	float: left;
+}
+#carousel .btn {
+  	width:30px;
+  	height:50px;
+  	background-color: #ccc;
+
+  	/*透明度寫法*/
+  	opacity: 0.5;
+  	filter:alpha(opacity:0.5);
+  	position: absolute;
+  	top:50%;
+  	margin-top:-25px;
+
+  	/*字型顏色*/
+  	cursor: pointer;  /* cursor 是用來改變滑鼠游標的形狀  pointer 手指去點的圖示*/
+  	text-align: center;
+  	line-height: 50px;
+  	font-size: 50px;
+  	color:#fff;
+  	display:none;
+  	z-index: 9999; /*顯示在最上層*/
+}
+
+#carousel .left{
+	left:0px;
+}
+#carousel .right{
+	right:0px;
+}
+#carousel:hover .btn{
+	display:block;
+}
+
+#hotimg{
+	float: left;
+	width: 270px;
+	height: 100%;
+	padding-left: 1.5%;
+}
+#hotimg img{
+	width: 100%;
+	height: 30.2%;
+}
+/*新聞塊*/
+#new{
+	width: 100%;	
+}
+.title{
+	width: 100%;
+	font-size: 30px;
+	font-weight: bold;
+	margin:0px;
+	text-align: center;
+}
+.title a{
+	color: #000000;
+	border-bottom: 2px solid #000000;
+}
+
+.section{
+	width: 65%;
+	height: 40px;
+	margin-left: 15%; 
+	margin-bottom: 5px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #C8C9D4;
+}
+.weather{
+	float: left;
+	margin-top:10px; 
+}
+.social_Tools{
+	float: right;
+	width: 410px;
+	margin-left: 10px;
+	align-items: center;
+	font-size: 20px;
+}
+.app{
+	float: left;
+	margin-right: 10px;
+	margin-top:6px; 
+}
+.app a{
+	color: #000000;
+}
+.Tools{
+	float: left;
+	align-items: center;
+	display: inline-flex;
+}
+.Tools img{
+	margin-left: 5px;
+}
+#newArea{
+	width: 65%;
+	height: 400px;
+	margin-left: 15%;
+	margin-top:20px;
+}
+.newbox{
+	float: left;
+	width: 400px;
+	margin-right: 20px;
+}
+.newbox img{
+	width:100%;
+	height: 200px;
+}
+.newbox h2{
+	margin:15px 0px;
+	font-size: 20px;
+}
+.newbox h5{
+	color:#7B7B7B;
+	font-weight: normal;
+	margin: 15px 0px;
+	font-size: 15px;
+}
+.newbox2{
+	width: 315px;
+	height: 100%;
+	float: right;
+	display: flex;
+	flex-direction: column;
+}
+.new_a{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.newtextbox{
+	width:100%; 
+	height: 20px;
+	display: block;	
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+	/*	
+	-webkit-line-clamp: 1; 超過一行隱藏並呈現刪節號 需搭配語法一起使用才有效果
+    -webkit-box-orient: vertical;
+    */
+}
+.newtextbox h3{
+	margin-top: 0px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.newbox2 .time{
+	margin-top: 10px;
+}
+
+#focus{
+	background-color: #004B97;
+	width: 100%;
+	height: 380px;
+	color:#ffffff;
+}
+.f_title{
+	width: 65%;
+	height: 20px;
+	margin-left: 15%;
+	padding-top:35px;
+	margin-bottom: 20px;
+}
+.left{
+	float: left;
+	font-size: 22px;
+	font-weight: bold;
+}
+.right{
+	float: right;
+	margin-top: 10px;	
+}
+.right a{
+	color:#ffffff;
+}
+.f_content{
+	width: 1200px;
+	height: 200px;
+	margin-left: 15%;
+	overflow: hidden;
+}
+.f_img{
+	display: flex; /*不換行*/
+}
+.f_img img{
+	width: 280px;
+	height: 157px;
+	margin-right: 10px;
+}
+.f_img h2{
+	color: #ffffff;
+	margin-top: 5px;
+
+}
+.f_convert{
+	text-align: right;
+	width: 66%;
+	margin-left: 15%;
+	margin-top: 40px;
+}
+.f_convert button{
+	padding: 0px;
+}
+.f_convert img{
+	border: 0;
+	background-color: #004B97;
+}
+.logoimg{
+	width: 165px;
+}
+#programme{
+	margin-bottom: 20px;
+}
+.section2{
+	width: 65%;
+	height: 65px;
+	display: flex; 
+	justify-content: space-between; /* 物件平均分配寬度，第一跟最後物件貼齊邊緣*/
+	align-items: center; /*物件垂直置中，物件區塊需有高度且display為flex 才有作用*/
+	margin-left: 15%; 
+	margin-bottom: 5px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #C8C9D4;
+}
+.social_Tools2{
+	float: right;
+	margin-left: 10px;
+	align-items: center;
+	font-size: 20px;
+	justify-content: space-between; 
+}
+.logoArea{
+	float: left;
+}
+.programme_content{
+	display: grid;
+	align-items: flex-start;
+	grid-template-columns: 480px 690px;
+	height: 270px;
+	margin-left: 15%;
+	column-gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 37px;
+    position: relative;
+}
+.programme_main .hot_proimg{
+	position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+.hot_proimg img{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: 0.3s;
+}
+.hot_title{
+	width: 423px;
+    background-color: #ffffff;
+    padding: 15px 16px;
+    bottom: -6px;
+    left: 15%;
+    transform: translateX(-48%);
+    position: absolute;
+}
+.hot_title p{
+	margin: 0;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.3s linear;
+}
+.more_programme{
+	width: 100%;
+	height: 270px;
+	overflow: hidden;
+}
+.more_proArea{
+	height: 100%;
+	overflow: hidden;
+}
+.more_pro_main{
+	display: flex;
+	width: 678px;
+}
+.more_pro_main a{
+	margin-right: 15px;
+	width: 235px;
+}
+.more_main_img{
+	width: 235px;
+}
+.more_main_img img{
+	width: 100%;
+	height: 132px;
+}
+.more_pro_main h3{
+	font-size: 18px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	overflow: hidden;
+	/*以下語法設定文字超過2行會隱藏超過部分並用刪節號代替*/
+    text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.more_pro_main p{
+	margin-top: 8px;
+}
+.sub_btn{
+	position: absolute;
+    bottom: 0;
+    right: 22%;
+}
+#sub_btn_left,#sub_btn_right{
+	border: 0px;
+	background-color: transparent; /*背景透明*/
+
+}
+#footer{
+	width: 100%;
+	height: 300px;
+	background-color: #184E7A;
+}

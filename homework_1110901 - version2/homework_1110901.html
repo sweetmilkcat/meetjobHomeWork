@@ -1,0 +1,431 @@
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/homework_1110901.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$("#menulist li ul").hide();
+			$(".submenu").css("opacity","0.9");
+			$("#menulist li").hover(
+				function(){
+					$(this).find("ul").slideDown("fast");
+					$(this).find("a:first").addClass("active");
+				},function(){
+					$(this).find(".submenu").fadeOut("fast");
+					$(this).find("a").removeClass("active");
+				}
+				);
+
+			var i = 0;
+    		var clone = $("#carousel .carouselimg li").first().clone();  //複製第一張圖片
+    		$("#carousel .carouselimg").append(clone);  // 將複製的第一張貼到最後面去
+
+    		var size = $("#carousel .carouselimg li").size();  //抓個數
+
+
+    		/*自動播放*/
+    		// setInterval 會不斷的呼叫函數   ，2秒呼叫一次
+    		var t = setInterval(function(){
+    			i++;
+    			move();
+    		},2000);
+
+    		function move(){
+    			if ( i == size){
+    				$("#carousel .carouselimg").css({left:0});
+    				i=1;
+    			}
+    			if (i == -1){
+    				$("#carousel .carouselimg").css({left:-(size -1) * 900});
+    				i = size - 2;
+    			}
+    			$("#carousel .carouselimg").stop().animate({left:-i * 900},500);
+    			/* 動畫 ，往左邊拉-500 px  , 會隨著 i 改變，而越拉越多*/
+    		}
+			
+
+			 $("#carousel").hover(function(){
+            	clearInterval(t) ; // 清除計時器
+	          	},
+		        function(){  // 滑鼠移出
+		            t = setInterval(function(){
+		              i++;
+		              move();
+		            },2000);
+		        });
+
+	        $("#carousel .left").click(function(){
+	          i++;    // i 每次都加1
+	          move();
+	       	  })
+
+	        $("#carousel .right").click(function(){
+	          i--;  // -- 每次都減1
+	          move();
+	         })
+			
+
+		});
+	</script>
+</head>
+<body>
+	<!--LOGO + 搜尋+小圖-->
+	<div id="header">
+		<img class="logo" src="img/TVBS_logo.svg">
+		<div class="search">
+			<input type="search" name="search" placeholder="關鍵字">
+			<button>
+				<img src="img/search_btn.svg">
+			</button>
+			<a href="#">EN</a>
+		</div>
+	</div>
+
+	<!--Menu-->
+	<div id="menu">
+			<ul id="menulist">
+				<li><a href="#">TVBS新聞</a></li>
+				<li><a href="#">女人我最大</a></li>
+				<li><a href="#">食尚玩家</a></li>
+				<li><a href="#">健康2.0</a></li>
+				<li><a href="#">地球黃金線</a></li>
+				<li><a href="#">節目</a>
+				<ul class="submenu">
+					<li>FUCKS全球新聞</li>
+					<li>X客觀點</li>
+					<li>睜一眼閉一眼生活好過點</li>
+					<li>小氣老闆問豆油</li>
+					<li>老闆娘去哪兒</li>
+					<li>拷貝進行中</li>
+					<li>菜鳥噗巄共</li>
+					<li>小蝦米翻身中</li>
+				</ul>
+				</li>
+				<li><a href="#">戲劇</a>
+				<ul class="submenu">
+					<li>崩潰職場生活</li>
+					<li>闆闆的微笑</li>
+					<li>菜鳥不會做筆記</li>
+					<li>同事擺老會</li>
+					<li>菜鳥教了幾次還不會!</li>
+					<li>主管就只會...</li>
+					<li>滾開，多好</li>
+					<li>確診的記憶</li>
+				</ul>
+				</li>
+				<li><a href="#">享食尚</a></li>
+				<li><a href="#">基金會</a></li>
+				<li><a href="#">頻道資訊</a>
+				<ul class="submenu">
+					<li>節目表</li>
+					<li>TVBS精彩台</li>
+					<li>TVBS ASIA</li>
+					<li>新媒體數位節目</li>
+				</ul>
+				</li>
+				<li><a href="#">更多</a>
+				<ul class="submenu">
+					<li>關於我悶</li>
+					<li>沒人服務</li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="main">
+		<!--圖片輪播區塊-->
+			<div id="hot">
+				<div id="carousel">
+					<ul class="carouselimg">
+						<li><img src="img/carousel1.jpg"></li>
+						<li><img src="img/carousel2.jpg"></li>
+						<li><img src="img/carousel3.jpg"></li>
+						<li><img src="img/carousel4.png"></li>
+					</ul>
+
+					<div class="btn left">&lt;</div>
+					<div class="btn right">&gt;</div>
+
+				</div>
+
+				<div id="hotimg">
+					<img src="img/photo2.jpg" style="margin-bottom: 23px;">
+					<img src="img/photo2.jpg" style="margin-bottom: 23px;">
+					<img src="img/photo2.jpg">
+				</div>
+			</div>
+
+			<!--新聞-->
+			<div id="new">
+				<div class="title"> <!--區塊標題-->
+						<a href="#">TVBS新聞</a>			
+				</div>
+					
+				<div class="section">
+
+					<div class="weather">
+						<span>今日天氣:</span>
+							臺北市 24º - 28º｜
+					</div>
+					<div class="social_Tools">
+						<div class="app">
+							<a href="#">下載APP:</a>
+						</div>
+						<div class="Tools">
+							追蹤我們: 					
+							<img src="img/icon-FB-color.svg">
+							<img src="img/icon-IG-color.svg">
+							<img src="img/icon-LINE-color.svg">
+							<img src="img/icon-twitter-color.svg">
+							<img src="img/icon-YT-color.svg">
+						</div>
+					</div>
+					
+				</div>
+				<div id="newArea">
+					<div class="newbox">
+						<img src="img/newArea1.jpg">
+						<a href="#"><h2>女王國葬祭英史上最強維安　空降特勤「規模超越奧運」</h2></a>
+						<a href="#"><h5>女王國葬祭英史上最強維安　空降特勤「規模超越奧運」</h5></a>
+						<div class="time">2小時前</div>
+					</div>
+					<div class="newbox">
+						<img src="img/newArea2.jpg">
+						<a href="#"><h2>拿到iPhone 14瑕疵機！蘋果祭補償　網驚：超賺</h2></a>
+						<a href="#"><h5>拿到iPhone 14瑕疵機！蘋果祭補償　網驚：超賺</h5></a>
+						<div class="time">7小時前</div>
+					</div>
+					<div class="newbox2">
+						<a class="new_a" href="#">
+							<div class="newtextbox">
+								<h3>斷言這15天出大事！4生肖「五運神炸」　錢擋不住了狂賺</h3>
+							</div>
+							<div class="time">7小時前</div>
+						</a>
+						<a class="new_a" href="#">
+							<div class="newtextbox">
+								<h3>斷言這15天出大事！4生肖「五運神炸」　錢擋不住了狂賺</h3>
+							</div>
+							<div class="time">7小時前</div>
+						</a>
+						<a class="new_a" href="#">
+							<div class="newtextbox">
+								<h3>斷言這15天出大事！4生肖「五運神炸」　錢擋不住了狂賺</h3>
+							</div>
+							<div class="time">7小時前</div>
+						</a>
+						<a class="new_a" href="#">
+							<div class="newtextbox">
+								<h3>斷言這15天出大事！4生肖「五運神炸」　錢擋不住了狂賺</h3>
+							</div>
+							<div class="time">7小時前</div>
+						</a>
+						<a class="new_a" href="#">
+							<div class="newtextbox">
+								<h3>斷言這15天出大事！4生肖「五運神炸」　錢擋不住了狂賺</h3>
+							</div>
+							<div class="time">7小時前</div>
+						</a>
+						<a class="new_a" href="#">
+							<div class="newtextbox">
+								<h3>斷言這15天出大事！4生肖「五運神炸」　錢擋不住了狂賺</h3>
+							</div>
+							<div class="time">7小時前</div>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+
+		<!--熱門議題-->
+		<div id="focus">
+			<div class="f_title">
+				<div class="left"><span>熱門議題</span></div>
+				<div class="right"><a href="#">> 全部議題</a></div>		
+			</div>
+
+			<div class="f_content">
+				<div class="f_img">
+					<a href="#">
+						<img src="img/foucs01.jpg">
+						<h2>iPhone14登場</h2>
+					</a>
+
+					<a href="#">
+						<img src="img/foucs02.jpg">
+						<h2>金鐘57</h2>
+					</a>
+
+					<a href="#">
+						<img src="img/foucs03.jpg">
+						<h2>戴維斯風波</h2>
+					</a>
+
+					<a href="#">
+						<img src="img/foucs04.jpg">
+						<h2>ESG理念</h2>
+					</a>
+
+					<a href="#">
+						<img src="img/foucs05.jpg">
+						<h2>金臨天下</h2>
+					</a>
+
+					<a href="#">
+						<img src="img/foucs06.jpg">
+						<h2>九合一大選</h2>
+					</a>
+
+					<a href="#">
+						<img src="img/foucs07.jpg">
+						<h2>U18世界盃</h2>
+					</a>
+
+					<a href="#">
+						<img src="img/foucs07.jpg">
+						<h2>新冠肺炎疫情</h2>
+					</a>
+				</div>				
+			</div>
+
+			<div class="f_convert">
+				<button id="f_btn_left">
+					<img src="img/btn-left.svg">
+				</button>
+				<button id="f_btn_right">
+					<img src="img/btn-right.svg">
+				</button>
+			</div>
+			
+		</div>
+
+		<!--精彩節目-->
+		<div id="programme">
+			<div class="title">
+				<a href="#">精彩節目</a>
+			</div>
+			
+			<div class="section2">
+
+				<div class="logoArea">
+					<img class="logoimg" src="img/logo_woman.png">
+				</div>
+				<div class="social_Tools2">
+					<div class="app">
+						<a href="#">下載APP:</a>
+						<a href="#">購物商城:</a>
+					</div>
+					<div class="Tools">
+						追蹤我們: 					
+						<img src="img/icon-FB.svg">
+						<img src="img/icon-YT.svg">
+						<img src="img/icon-LINE.svg">
+						<img src="img/icon-IG.svg">
+					</div>
+				</div>
+
+			</div>
+
+			<div class="programme_content">
+				
+				<a  class="programme_main" href="#">					
+					<div class="hot_proimg">
+						<img src="img/woman01.jpg">
+					</div>
+					<div class="hot_title">
+						<p>【節目資訊】09／30  12星座分別是什麼樣的公主？勇敢堅強又美麗！</p>
+					</div>						
+				</a>
+			
+				<div class="more_programme">
+					<div class="more_proArea">
+						<div class="more_pro_main">
+							<a href="#">
+								<div class="more_main_img">
+									<img src="img/woman02.jpg">
+								</div>	
+								<h3>朴敏英戀情曝光收視率砍半！富豪前男友「正臉曝光」，網罵爆：和詐騙犯結婚搬去隱居好嗎？</h3>
+								<p>2022-09-30 18:32:30</p>
+							</a>
+							<a href="#">
+								<div class="more_main_img">
+									<img src="img/woman03.jpg">
+								</div>	
+								<h3>Hello Kitty復古口金包、罐頭收納包潮翻！還有超萌啤酒杯、拼圖盤整套都要收</h3>
+								<p>2022-09-30 18:27:00</p>
+							</a>
+
+							<a href="#">
+								<div class="more_main_img">
+									<img src="img/woman04.jpg">
+								</div>	
+								<h3>你在幹嘛～公認「12星座反感語錄」：比起不讀不回，巨蟹更討厭看到「這句」？</h3>
+								<p>2022-09-30 17:59:02</p>
+							</a>
+
+							<a href="#">
+								<div class="more_main_img">
+									<img src="img/woman05.jpg">
+								</div>	
+								<h3>杜汶澤老婆45歲身材太辣！結婚17年補過超甜蜜月，田蕊妮：老公豐富我的人生</h3>
+								<p>2022-09-30 17:48:00</p>
+							</a>
+
+							<a href="#">
+								<div class="more_main_img">
+									<img src="img/woman06.jpg">
+								</div>	
+								<h3>2022全台5處芒草季、甜根子草景點推薦，唯美的銀白芒浪拍起來！</h3>
+								<p>2022-09-30 17:00:00</p>
+							</a>
+
+							<a href="#">
+								<div class="more_main_img">
+									<img src="img/woman07.jpg">
+								</div>	
+								<h3>維密超模的漫畫腿是這樣來的！小紅書超火模特親授「5分鐘仙女腿養成操」，網友：太酸爽了</h3>
+								<p>2022-09-30 16:23:00</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="sub_btn">
+					<button id="sub_btn_left">
+						<img src="img/arrow-left_gray.svg">
+					</button>
+					<button id="sub_btn_right">
+						<img src="img/arrow-right_gray.svg">
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!--更多精采節目-->
+		<div id="more">
+			
+		</div>
+
+
+		<!--優質戲劇-->
+		<div id="drama">
+
+			<div class="hotdrama">
+			</div>
+
+			<div class="dramalist">
+			</div>
+		</div>
+
+		<!--企業動態-->
+		<div id="enterprise">
+			
+		</div>
+
+	</div>
+	<!--footer-->
+	<div id="footer">
+	</div>
+</body>
+</html>
